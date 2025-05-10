@@ -21,49 +21,41 @@ const Utilisateur = ({ utilisateur }) => {
       <div className="pt-12 pb-4 px-6">
         <h2 className="text-xl font-bold text-gray-800">{utilisateur.name}</h2>
         <p className="text-sm text-blue-500">@{utilisateur.username}</p>
-
-        <button
-          className="mt-4 w-full py-2 rounded-md bg-blue-500 hover:bg-blue-600 text-white font-medium   focus:outline-none focus:ring-2 focus:ring-blue-300"
-          onClick={() => setShowDetails(!showDetails)}
-        >
-          {showDetails ? "Masquer les détails" : "Afficher les détails"}
-        </button>
       </div>
 
       {/* Section des détails */}
-      {showDetails && (
-        <div className="px-6 py-4 border-t border-gray-100 bg-gray-50 space-y-2 text-sm">
-          <div className="flex">
-            <span className="font-medium w-24 text-gray-600">Adresse:</span>
-            <span className="text-gray-800">
-              {utilisateur.address.street}, {utilisateur.address.suite},{" "}
-              {utilisateur.address.city}, {utilisateur.address.zipcode}
-            </span>
-          </div>
 
-          <div className="flex">
-            <span className="font-medium w-24 text-gray-600">Téléphone:</span>
-            <span className="text-gray-800">{utilisateur.phone}</span>
-          </div>
-
-          <div className="flex">
-            <span className="font-medium w-24 text-gray-600">Site web:</span>
-            <span className="text-gray-800">{utilisateur.website}</span>
-          </div>
-
-          <div className="flex">
-            <span className="font-medium w-24 text-gray-600">Entreprise:</span>
-            <span className="text-gray-800">{utilisateur.company.name}</span>
-          </div>
-
-          <div className="flex">
-            <span className="font-medium w-24 text-gray-600">Description:</span>
-            <span className="text-gray-800">
-              {utilisateur.company.catchPhrase}
-            </span>
-          </div>
+      <div className="px-6 py-4 border-t border-gray-100 bg-gray-50 space-y-2 text-sm">
+        <div className="flex">
+          <span className="font-medium w-24 text-gray-600">Adresse:</span>
+          <span className="text-gray-800">
+            {utilisateur.address.street}, {utilisateur.address.suite},{" "}
+            {utilisateur.address.city}, {utilisateur.address.zipcode}
+          </span>
         </div>
-      )}
+
+        <div className="flex">
+          <span className="font-medium w-24 text-gray-600">Téléphone:</span>
+          <span className="text-gray-800">{utilisateur.phone}</span>
+        </div>
+
+        <div className="flex">
+          <span className="font-medium w-24 text-gray-600">Site web:</span>
+          <span className="text-gray-800">{utilisateur.website}</span>
+        </div>
+
+        <div className="flex">
+          <span className="font-medium w-24 text-gray-600">Entreprise:</span>
+          <span className="text-gray-800">{utilisateur.company.name}</span>
+        </div>
+
+        <div className="flex">
+          <span className="font-medium w-24 text-gray-600">Description:</span>
+          <span className="text-gray-800">
+            {utilisateur.company.catchPhrase}
+          </span>
+        </div>
+      </div>
     </div>
   );
 };
